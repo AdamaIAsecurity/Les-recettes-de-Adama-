@@ -1,80 +1,20 @@
 
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les Recettes d'Adama - Thiès</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fff8f0;color:#333}
-header{background:linear-gradient(135deg,#ff6a00,#ee0979);color:white;padding:40px 20px;text-align:center}
-header h1{font-size:32px;margin-bottom:10px}
-header p{opacity:0.9}
-.search-box{max-width:500px;margin:20px auto 0}
-.search-box input{width:100%;padding:15px 20px;border-radius:30px;border:none;font-size:16px;outline:none}
-.container{max-width:1000px;margin:30px auto;padding:0 15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.1);transition:0.3s}
-.card:hover{transform:translateY(-5px)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:18px}
-.card-body h3{color:#ff6a00;margin-bottom:8px}
-.card-body p{font-size:14px;line-height:1.5;color:#666}
-.tag{display:inline-block;background:#ffe8d6;color:#ff6a00;padding:5px 12px;border-radius:20px;font-size:12px;margin-top:10px;font-weight:bold}
-footer{text-align:center;padding:30px;color:#999}
-</style>
-</head>
-<body>
-<header>
-<h1>🍲 Les Recettes d'Adama</h1>
-<p>Les meilleures saveurs de Thiès, Sénégal</p>
-<div class="search-box">
-<input type="search" id="search" placeholder="Rechercher une recette... Thiéboudienne, Yassa...">
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Recettes d'Adama</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#121212;color:white;font-family:Arial} .header{background:linear-gradient(135deg,#ff6a00,#ee0979);padding:30px 20px;text-align:center} .search-box{max-width:600px;margin:20px auto 0} .search-box input{width:100%;padding:15px;border-radius:30px;border:none} .container{max-width:1200px;margin:0 auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px} .card{background:#1e1e1e;border-radius:20px;overflow:hidden} .card img{width:100%;height:250px;object-fit:cover} .card-content{padding:15px} .card h3{color:#ff9a00;margin-bottom:8px} .tag{background:rgba(255,154,0,.15);color:#ff9a00;padding:5px 10px;border-radius:20px;font-size:0.8em}</style></head><body>
+<div class="header"><h1>🍛 Les Recettes d'Adama</h1><p>10 saveurs de Thiès</p><div class="search-box"><input id="search" placeholder="🔍 Rechercher..." onkeyup="filtrer()"></div></div>
+<div class="container">
+<div class="card"><img src="thiakry.jpg"><div class="card-content"><h3>Thiakry Crémeux</h3><p>Mil, yaourt, sucre vanillé. Onctueux et frais.</p><span class="tag">🍨 Dessert</span></div></div>
+<div class="card"><img src="domoda_boulettes.jpg"><div class="card-content"><h3>Domoda Boulettes</h3><p>Sauce arachide, boulettes, riz blanc et citron.</p><span class="tag">🥜 Domoda</span></div></div>
+<div class="card"><img src="fataya_fromage.jpg"><div class="card-content"><h3>Fataya Fromage</h3><p>Feuilletés fromage et persil dorés au four.</p><span class="tag">🧀 Fataya</span></div></div>
+<div class="card"><img src="bissap_ananas.jpg"><div class="card-content"><h3>Jus Bissap Ananas</h3><p>Bissap rose, ananas, orange et citron bien frais.</p><span class="tag">🥤 Bissap</span></div></div>
+<div class="card"><img src="thiebou_poisson.jpg"><div class="card-content"><h3>Thiéboudienne Poisson</h3><p>Riz, poisson grillé, légumes et piment.</p><span class="tag">⭐ Thiébou</span></div></div>
+<div class="card"><img src="yassa_viande.jpg"><div class="card-content"><h3>Yassa Viande</h3><p>Viande fondante, oignons confits caramélisés.</p><span class="tag">🔥 Yassa</span></div></div>
+<div class="card"><img src="salade_fruits.jpg"><div class="card-content"><h3>Salade de Fruits</h3><p>Banane, orange, fraise, raisin.</p><span class="tag">🍓 Fruits</span></div></div>
+<div class="card"><img src="assiette_coeur.jpg"><div class="card-content"><h3>Assiette Cœur</h3><p>Thieb, dibi, plantains, saucisses et frites.</p><span class="tag">❤️ Fête</span></div></div>
+<div class="card"><img src="chawarma.jpg"><div class="card-content"><h3>Chawarma</h3><p>Tortilla, viande hachée, fromage fondant.</p><span class="tag">🌯 Chawarma</span></div></div>
+<div class="card"><img src="poulet_olives.jpg"><div class="card-content"><h3>Poulet Olives</h3><p>Poulet rôti, olives, oeufs, poivrons.</p><span class="tag">🍗 Poulet</span></div></div>
 </div>
-</header>
-
-<div class="container" id="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500">
-<div class="card-body">
-<h3>Thiéboudienne Rouge</h3>
-<p>Le plat national du Sénégal. Riz au poisson, légumes, et beaucoup d'amour. Recette de ma maman.</p>
-<span class="tag">⭐ Spécialité</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500">
-<div class="card-body">
-<h3>Yassa Poulet</h3>
-<p>Poulet mariné au citron, oignons fondants. Doux, acidulé, parfait avec du riz blanc.</p>
-<span class="tag">🍋 Citronné</span>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500">
-<div class="card-body">
-<h3>Mafé Boeuf</h3>
-<p>Ragoût onctueux à la pâte d'arachide. Le plat qui réconforte toute la famille.</p>
-<span class="tag">🥜 Gourmand</span>
-</div>
-</div>
-</div>
-
-<footer>
-<p>Fait avec ❤️ par Adama à Thiès - 2026</p>
-</footer>
-
-<script>
-const search = document.getElementById('search');
-const cards = document.querySelectorAll('.card');
-search.addEventListener('input', () => {
-  const q = search.value.toLowerCase();
-  cards.forEach(c => {
-    c.style.display = c.innerText.toLowerCase().includes(q) ? 'block' : 'none';
-  });
-});
-</script>
-</body>
-</html>
+<script>function filtrer(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'':'none'})}</script>
+</body></html>
